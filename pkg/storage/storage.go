@@ -5,5 +5,7 @@ import (
 )
 
 var (
-	Store = make(map[int]models.Product)
+	Store     = make(map[int]models.Product)
+	LastID    int
+	CodeIndex = make(map[string]int)
 )

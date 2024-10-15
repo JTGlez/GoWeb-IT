@@ -23,11 +23,15 @@ func LoadProducts(filePath string) error {
 
 	var products []models.Product
 	if err := json.Unmarshal(data, &products); err != nil {
-		return fmt.Errorf("couldn't unmarshal JSON: %v", err)
+		return fmt.Errorf("could not unmarshal JSON: %v", err)
 	}
 
 	for _, product := range products {
 		Store[product.ID] = product
+		CodeIndex[product.CodeValue] = product.ID
+		if product.ID > LastID {
+			LastID = product.ID
+		}
 	}
 
 	return nil

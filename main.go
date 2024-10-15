@@ -29,6 +29,7 @@ func main() {
 		r.Get("/", handlers.ProductsHandler)
 		r.Get("/{id}", handlers.ProductsByIDHandler)
 		r.Get("/search", handlers.SearchProductsHandler)
+		r.Post("/", handlers.AddProductHandler)
 	})
 
 	port := ":8080"
