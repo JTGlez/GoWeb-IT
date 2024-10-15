@@ -4,15 +4,15 @@ import (
 	"log"
 	"net/http"
 
+	storage "github.com/JTGlez/GoWeb-IT/internal/database"
 	"github.com/JTGlez/GoWeb-IT/pkg/handlers"
-	"github.com/JTGlez/GoWeb-IT/pkg/storage"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
 
 func main() {
 	log.Println("Loading products from JSON file...")
-	err := storage.LoadProducts("pkg/storage/static/products.json")
+	err := storage.LoadProducts("../internal/database/static/products.json")
 	if err != nil {
 		log.Fatalf("Failed to load products: %v", err)
 	}

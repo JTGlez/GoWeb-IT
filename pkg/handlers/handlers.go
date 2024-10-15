@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"time"
 
+	storage "github.com/JTGlez/GoWeb-IT/internal/database"
 	"github.com/JTGlez/GoWeb-IT/pkg/models"
-	"github.com/JTGlez/GoWeb-IT/pkg/storage"
 	"github.com/go-chi/chi/v5"
 )
 
